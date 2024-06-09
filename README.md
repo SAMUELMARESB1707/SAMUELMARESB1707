@@ -39,7 +39,7 @@
   </a>
 </p>
 
-<h3>Statistical Data :-</h3>
+<h3>Datos estadisticos:</h3>
 <p>
     <img align="center"
          src="https://github-readme-stats.vercel.app/api/top-langs?username=SAMUELMARESB1707&amp;show_icons=true&amp;locale=en&amp;bg_color=0d1117&amp;text_color=ffffff&amp;layout=compact"
