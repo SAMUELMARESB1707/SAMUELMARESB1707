@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Codigo hecho por Samuel Mares Barragán y Danny Mena Nuevo;
+        function valiContra(){
+            var contra;
+            var pala3;
+            var moti = "";
+            do {
+                contra = prompt("Ingrese la contraseña a validar: ");
+                if(contra === null || contra === ""){
+                    moti = "La contraseña no puede estar vacía";
+                }else{
+                    pala3 = contra.split(" ");
+                    if(pala3.length < 3){
+                        moti = "La contraseña debe tener al menos 3 palabras";
+                    }else if(contra.length < 10 || contra.length > 20){
+                        moti = "La contraseña debe tener al menos 10 caracteres y no sobrepasar los 20 caracteres";
+                    }else{
+                        var mayus = false;
+                        var minus = false;
+                        var num = false;
+                        var carac = false;
+    
+                        for(var i = 0; i < contra.length; i++){
+                            if(contra.charAt(i) >= 'A' && contra.charAt(i) <= 'Z'){
+                                mayus = true;
+                            }
+                            if(contra.charAt(i) >= 'a' && contra.charAt(i) <= 'z'){
+                                minus = true;
+                            }
+                            if(!isNaN(parseInt(contra.charAt(i)))){
+                                num = true;
+                            }
+                            if(contra.charAt(i) === '!' || contra.charAt(i) === '@' || contra.charAt(i) === '#' || contra.charAt(i) === '$' || contra.charAt(i) === '%' || contra.charAt(i) === '&' || contra.charAt(i) === '(' || contra.charAt(i) === ')' || contra.charAt(i) === '=' || contra.charAt(i) === '?' || contra.charAt(i) === '-' || contra.charAt(i) === '_' || contra.charAt(i) === ',' || contra.charAt(i) === '.' || contra.charAt(i) === ":" || contra.charAt(i) === ';' || contra.charAt(i) === '"' || contra.charAt(i) === '|' || contra.charAt(i) === '/' || contra.charAt(i) === '*' || contra.charAt(i) === '+' || contra.charAt(i) === '{' || contra.charAt(i) === '}' || contra.charAt(i) === '[' || contra.charAt(i) === ']' || contra.charAt(i) === '~' || contra.charAt(i) === '^' || contra.charAt(i) === '¿' || contra.charAt(i) === '¡' || contra.charAt(i) === '°' || contra.charAt(i) === '«' || contra.charAt(i) === '»' || contra.charAt(i) === '<' || contra.charAt(i) === '>' || contra.charAt(i) === '÷'){
+                                carac = true;
+                            }
+                        }
+    
+                        if(!mayus){
+                            moti = "La contraseña debe contener al menos una letra mayúscula";
+                        }else if(!minus){
+                            moti = "La contraseña debe contener al menos una letra minúscula";
+                        }else if(!num){
+                            moti = "La contraseña debe contener al menos un número";
+                        }else if(!carac){
+                            moti = "La contraseña debe contener al menos un carácter especial";
+                        }else{
+                            return "Contraseña válida";
+                        }
+                    }
+                }
+            }while(confirm(moti + ", en otras palabras, contraseña invalida. ¿Desea ingresar otra contraseña?"));
+    
+            return "Se canceló la validación";
+        }
+        
+        alert(valiContra());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
